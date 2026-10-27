@@ -1,0 +1,2 @@
+select players.first_name, players.last_name, salaries.salary/performances.H as "dollars per hit" from performances join players on players.id = performances.player_id join salaries on salaries.
+player_id = players.id where salaries.year = performances.year and salaries.year = 2001 and salaries.salary/performances.H is not null order by "dollars per hit" asc, players.first_name, players.last_name limit 10;
